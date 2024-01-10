@@ -1,3 +1,4 @@
+import numpy as np
 import pandas as pd
 from keras.callbacks import TensorBoard
 from keras.models import Sequential
@@ -63,7 +64,7 @@ def plot_confusion_matrix(cm,
 
 column_names = ['accx', 'accy', 'accz', 'gccx', 'gccy', 'gccz', 'activity','timspace']
 
-training_data_df = pd.read_csv("sales_data_training_scaledwith time.csv")
+training_data_df = pd.read_csv("data__1.csv")
 
 # for activity in np.unique(training_data_df["activity"]):
 #     subset = training_data_df[training_data_df["activity"] == 0.0][:1080]

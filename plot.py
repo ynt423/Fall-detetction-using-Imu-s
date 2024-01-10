@@ -1,10 +1,11 @@
+import math
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy import stats
 import tensorflow as tf
 from math import sqrt
-import
+
 
 
 def plotaxis(axis, x, y, title):
@@ -41,8 +42,10 @@ def plotacceleration(act, data):
     plt.show()
 column_names = ['accx', 'accy', 'accz', 'gccx', 'gccy', 'gccz', 'activity','timspace']
 
-training_data_df = pd.read_csv("D01_SA16_R01normalizationwith time.csv")
+training_data_df = pd.read_csv("data__1.csv")
+""" training_data_df = pd.read_csv("D01_SA16_R01normalizationwith time.csv") """
 
-for activity in np.unique(training_data_df):
+training_data_df = training_data_df.dropna(subset=['activity'])
+for activity in np.unique(training_data_df['activity']):
     subset = training_data_df
     plotacceleration(activity,subset)
